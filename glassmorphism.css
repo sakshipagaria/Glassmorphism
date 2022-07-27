@@ -1,0 +1,149 @@
+*{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    background: url('https://img.freepik.com/free-vector/flat-abstract-wireframe-background_23-2148995803.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    flex-wrap: wrap;
+}
+section{
+    position: relative;
+}
+
+section::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+    /*background: linear-gradient(rgb(60, 194, 224),rgb(3, 37, 255));
+    clip-path:circle(40% at right 95%);*
+}
+body::after{
+    content:'';
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: linear-gradient(rgb(105, 187, 206),rgb(20, 42, 208));
+    clip-path:circle(20% at 10% 10%);
+}*/
+.container{
+    position: relative;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    max-width:1200px;
+    flex-wrap:wrap;
+    z-index:1;
+    margin:40px 0;
+}
+.container .card{
+    position:relative;
+    width:280px;
+    height:400px;
+    margin:30px;
+    box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.397) ;                 /*1st & 2nd px level of shadow 3rd px-shadow spread karne ke liye*/
+    border-radius: 20px;
+    background:rgba(255,255,255,0.1);
+    overflow:hidden;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-top:1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);          /*blur card*/
+}
+.container .card .content {
+    position: relative;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    opacity:0.5;
+    text-align:center;
+    /*transform: translateY(100px);
+    opacity:0;*/
+    transition: 0.5s;
+}
+.container .card:hover .content{
+    transform: translateY(-15px);
+    opacity:1;
+}
+.container .card .content .imgbx{
+    position: relative;
+    width:150px;
+    height:150px;
+    left:40px;
+    overflow: hidden;
+    border-radius:50%;
+    border:5px solid rgba(0, 0, 0, 0.295) ;
+}
+.container .card .content .imgbx img{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.container .card .content h2{
+    position: absolute;
+    top:-100px;
+    right:-20px;
+    font-size:5em;
+    color:rgba(255,255,255,0.2);
+    pointer-events: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container .card .content .contentbx h3{
+    font-size:1.5em;
+    color:whitesmoke;
+    z-index:1;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    margin:20px 0 10px;
+    line-height: 1.1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container .card .content .contentbx h3 span{
+    font-size: 15px;
+    color:white;
+    font-weight: 300;
+    text-transform: initial;
+}
+.container .card .sci{
+    position: absolute;
+    bottom:50px;
+    display: flex;
+}
+.container .card .sci li{
+    list-style:none;
+    margin:0;
+    transform: translateY(40px);
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: calc(0.1s*var(--i));
+}
+.container .card:hover .sci li{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.container .card .sci li a{
+    color:white;
+    font-size: 24px;
+    padding:10px;
+}
